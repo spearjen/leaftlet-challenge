@@ -78,108 +78,106 @@ info.addTo(map);
 
 // // Initialize an object containing icons for each layer group
 
-// var circles = L.circleMarker([earthquake.geometry[0], earthquake.geometry[1]], {radius: earthquake.geometry[2]*10}).addTo(map);
-        // properties.mag])
+var icons = {
+    gtSevFiveShallow: L.ExtraMarkers.icon({
+        icon: "ion-pulse-outline",
+        iconColor: "white",
+        markerColor: "yellow",
+        shape: "circle",
+        height:80,
+        width:200
+        // markerSize: [80, 200]
+    }),
+    gtSevFiveMedium: L.ExtraMarkers.icon({
+        icon: "ion-pulse-outline",
+        iconColor: "white",
+        markerColor: "orange",
+        shape: "circle",
+        height: 80,
+        width: 200
+    }),
+    gtSevFiveDeep: L.ExtraMarkers.icon({
+        icon: "ion-pulse-outline",
+        iconColor: "white",
+        markerColor: "red",
+        shape: "circle",
+        height: 80,
+        width: 200
+    }),
+    btFiveSevFiveShallow: L.ExtraMarkers.icon({
+        icon: "ion-pulse-outline",
+        iconColor: "white",
+        markerColor: "yellow",
+        shape: "circle",
+        height: 60,
+        width: 150
+    }),
+    btFiveSevFiveMedium: L.ExtraMarkers.icon ({
+        icon: "ion-pulse-outline",
+        iconColor: "white",
+        markerColor: "orange",
+        shape: "circle",
+        height: 60,
+        width: 150
+    }),
+    btFiveSevFiveDeep: L.ExtraMarkers.icon ({
+        icon: "ion-pulse-outline",
+        iconColor: "white",
+        markerColor: "red",
+        shape: "circle",
+        height: 60,
+        width: 150
+    }),
 
-    // gtSevFiveShallow: L.ExtraMarkers.icon({
-    //     icon: "ion-pulse-outline",
-    //     iconColor: "white",
-    //     markerColor: "yellow",
-    //     shape: "circle",
-    //     height:80,
-    //     width:200
-    //     // markerSize: [80, 200]
-    // }),
-    // gtSevFiveMedium: L.ExtraMarkers.icon({
-    //     icon: "ion-pulse-outline",
-    //     iconColor: "white",
-    //     markerColor: "orange",
-    //     shape: "circle",
-    //     height: 80,
-    //     width: 200
-    // }),
-    // gtSevFiveDeep: L.ExtraMarkers.icon({
-    //     icon: "ion-pulse-outline",
-    //     iconColor: "white",
-    //     markerColor: "red",
-    //     shape: "circle",
-    //     height: 80,
-    //     width: 200
-    // }),
-    // btFiveSevFiveShallow: L.ExtraMarkers.icon({
-    //     icon: "ion-pulse-outline",
-    //     iconColor: "white",
-    //     markerColor: "yellow",
-    //     shape: "circle",
-    //     height: 60,
-    //     width: 150
-    // }),
-    // btFiveSevFiveMedium: L.ExtraMarkers.icon ({
-    //     icon: "ion-pulse-outline",
-    //     iconColor: "white",
-    //     markerColor: "orange",
-    //     shape: "circle",
-    //     height: 60,
-    //     width: 150
-    // }),
-    // btFiveSevFiveDeep: L.ExtraMarkers.icon ({
-    //     icon: "ion-pulse-outline",
-    //     iconColor: "white",
-    //     markerColor: "red",
-    //     shape: "circle",
-    //     height: 60,
-    //     width: 150
-    // }),
-
-    // btTwoFiveFourNineShallow: L.ExtraMarkers.icon ({
-    //     icon: "ion-pulse-outline",
-    //     iconColor: "white",
-    //     markerColor: "yellow",
-    //     shape: "circle",
-    //     height: 40,
-    //     width: 100
-    // }),
-    // btTwoFiveFourNineMedium: L.ExtraMarkers.icon ({
-    //     icon: "ion-pulse-outline",
-    //     iconColor: "white",
-    //     markerColor: "orange",
-    //     shape: "circle",
-    //     height: 40,
-    //     width: 100
-    // }),
-    // btTwoFiveFourNineDeep: L.ExtraMarkers.icon ({
-    //     icon: "ion-pulse-outline",
-    //     iconColor: "white",
-    //     markerColor: "red",
-    //     height: 40,
-    //     width: 100
-    // }),
-    // ltTwoFiveShallow: L.ExtraMarkers.icon ({
-    //     icon: "ion-pulse-outline",
-    //     iconColor: "white",
-    //     markerColor: "yellow",
-    //     shape: "circle",
-    //     height: 20,
-    //     width: 50
-    // }),
-    // ltTwoFiveMedium: L.ExtraMarkers.icon ({
-    //     icon: "ion-pulse-outline",
-    //     iconColor: "white",
-    //     markerColor: "orange",
-    //     shape: "circle",
-    //     height: 20,
-    //     width: 50
-    // }),
-    // ltTwoFiveDeep: L.ExtraMarkers.icon ({
-    //     icon: "ion-pulse-outline",
-    //     iconColor: "white",
-    //     markerColor: "red",
-    //     shape: "circle",
-    //     height: 20,
-    //     width: 50
-    //     // markerSize: [20,50]
-    // }),
-// };
+    btTwoFiveFourNineShallow: L.ExtraMarkers.icon ({
+        icon: "ion-pulse-outline",
+        iconColor: "white",
+        markerColor: "yellow",
+        shape: "circle",
+        height: 40,
+        width: 100
+    }),
+    btTwoFiveFourNineMedium: L.ExtraMarkers.icon ({
+        icon: "ion-pulse-outline",
+        iconColor: "white",
+        markerColor: "orange",
+        shape: "circle",
+        height: 40,
+        width: 100
+    }),
+    btTwoFiveFourNineDeep: L.ExtraMarkers.icon ({
+        icon: "ion-pulse-outline",
+        iconColor: "white",
+        markerColor: "red",
+        height: 40,
+        width: 100
+    }),
+    ltTwoFiveShallow: L.ExtraMarkers.icon ({
+        icon: "ion-pulse-outline",
+        iconColor: "white",
+        markerColor: "yellow",
+        shape: "circle",
+        height: 20,
+        width: 50
+    }),
+    ltTwoFiveMedium: L.ExtraMarkers.icon ({
+        icon: "ion-pulse-outline",
+        iconColor: "white",
+        markerColor: "orange",
+        shape: "circle",
+        height: 20,
+        width: 50
+    }),
+    ltTwoFiveDeep: L.ExtraMarkers.icon ({
+        icon: "ion-pulse-outline",
+        iconColor: "white",
+        markerColor: "red",
+        shape: "circle",
+        height: 20,
+        width: 50
+        // markerSize: [20,50]
+    }),
+};
 
 // Perform an API call to the USGS endpoint
 d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson", function(infoMag) {
@@ -214,80 +212,66 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geo
     for (var i = 0; i < earthquakeMag.length; i++) {
 
         // Create a new earthquake object with properties of both station objects
-        var earthquake = Object.assign({}, earthquakeMag[i]);
+        var earthquake = Object.assign({}, earthquakeMag[i], earthquakeMag[i]);
 
-        if (earthquake.geometry.coordinates[2] > 10) {
-            earthquakeCoding = "Deep";
+        // If an earthquake is deep depth and high magnitude
+        if ((earthquake.properties.mag >7.5) && (earthquake.geometry.coordinates[2] > 10)) {
+        earthquakeCoding = "gtSevFiveDeep";
+        }
+        // If an earthquake is medium depth and high magnitude
+        else if ((earthquake.properties.mag >7.5) && (earthquake.geometry.coordinates[2] >5 && earthquake.geometry.coordinates[2] <= 10)) {
+        earthquakeCoding = "gtSevFiveMedium";
+        }
+        // If an earthquake is shallow depth and high magnitude
+        else if ((earthquake.properties.mag >7.5) && (earthquake.geometry.coordinates[2] <= 5)) {
+        earthquakeCoding = "gtSevFiveMediumShallow";
         }
 
-        if (earthquake.geometry.coordinates[2] >5 && earthquake.geometry.coordinates[2] <=10) {
-            earthquakeCoding = "Medium";
+        // If an earthquake is deep depth and medium high magnitude
+        else if ((earthquake.properties.mag >5 && earthquake.properties.mag <= 7.5) && (earthquake.geometry.coordinates[2] > 10)) {
+        earthquakeCoding = "btFiveSevFiveDeep";
+        }
+        // If an earthquake is medium depth and medium high magnitude
+        else if ((earthquake.properties.mag >5 && earthquake.properties.mag <= 7.5) && (earthquake.geometry.coordinates[2] >5 && earthquake.geometry.coordinates[2] <= 10)) {
+        earthquakeCoding = "btFiveSevFiveMedium";
+        }
+        // If an earthquake is shallow depth and medium high magnitude
+        else if ((earthquake.properties.mag >5 && earthquake.properties.mag <= 7.5) && (earthquake.geometry.coordinates[2] <= 5)) {
+        earthquakeCoding = "btFiveSevFiveShallow";
         }
 
-        else if (earthquake.geometry.coordinates[2] <=5) {
-            earthquakeCoding = "Shallow";
+
+        // If an earthquake is deep depth and medium low magnitude
+        else if ((earthquake.properties.mag >2.5 && earthquake.properties.mag <= 5) && (earthquake.geometry.coordinates[2] > 10)) {
+        earthquakeCoding = "btTwoFiveFourNineDeep";
+        }
+        // If an earthquake is medium depth and medium low magnitude
+        else if ((earthquake.properties.mag >2.5 && earthquake.properties.mag <= 5) && (earthquake.geometry.coordinates[2] >5 && earthquake.geometry.coordinates[2] <= 10)) {
+        earthquakeCoding = "btTwoFiveFourNineMedium";
+        }
+        // If an earthquake is shallow depth and medium low magnitude
+        else if ((earthquake.properties.mag >2.5 && earthquake.properties.mag <= 5) && (earthquake.geometry.coordinates[2] <= 5)) {
+        earthquakeCoding = "btTwoFiveFourNineShallow";
         }
 
-        var circles = L.circleMarker([earthquake.geometry[0], earthquake.geometry[1]], {radius: earthquake.geometry[2]*10}).addTo(map);
-
-        // // If an earthquake is deep depth and high magnitude
-        // if ((earthquake.properties.mag >7.5) && (earthquake.geometry.coordinates[2] > 10)) {
-        // earthquakeCoding = "gtSevFiveDeep";
-        // }
-        // // If an earthquake is medium depth and high magnitude
-        // else if ((earthquake.properties.mag >7.5) && (earthquake.geometry.coordinates[2] >5 && earthquake.geometry.coordinates[2] <= 10)) {
-        // earthquakeCoding = "gtSevFiveMedium";
-        // }
-        // // If an earthquake is shallow depth and high magnitude
-        // else if ((earthquake.properties.mag >7.5) && (earthquake.geometry.coordinates[2] <= 5)) {
-        // earthquakeCoding = "gtSevFiveMediumShallow";
-        // }
-
-        // // If an earthquake is deep depth and medium high magnitude
-        // else if ((earthquake.properties.mag >5 && earthquake.properties.mag <= 7.5) && (earthquake.geometry.coordinates[2] > 10)) {
-        // earthquakeCoding = "btFiveSevFiveDeep";
-        // }
-        // // If an earthquake is medium depth and medium high magnitude
-        // else if ((earthquake.properties.mag >5 && earthquake.properties.mag <= 7.5) && (earthquake.geometry.coordinates[2] >5 && earthquake.geometry.coordinates[2] <= 10)) {
-        // earthquakeCoding = "btFiveSevFiveMedium";
-        // }
-        // // If an earthquake is shallow depth and medium high magnitude
-        // else if ((earthquake.properties.mag >5 && earthquake.properties.mag <= 7.5) && (earthquake.geometry.coordinates[2] <= 5)) {
-        // earthquakeCoding = "btFiveSevFiveShallow";
-        // }
-
-
-        // // If an earthquake is deep depth and medium low magnitude
-        // else if ((earthquake.properties.mag >2.5 && earthquake.properties.mag <= 5) && (earthquake.geometry.coordinates[2] > 10)) {
-        // earthquakeCoding = "btTwoFiveFourNineDeep";
-        // }
-        // // If an earthquake is medium depth and medium low magnitude
-        // else if ((earthquake.properties.mag >2.5 && earthquake.properties.mag <= 5) && (earthquake.geometry.coordinates[2] >5 && earthquake.geometry.coordinates[2] <= 10)) {
-        // earthquakeCoding = "btTwoFiveFourNineMedium";
-        // }
-        // // If an earthquake is shallow depth and medium low magnitude
-        // else if ((earthquake.properties.mag >2.5 && earthquake.properties.mag <= 5) && (earthquake.geometry.coordinates[2] <= 5)) {
-        // earthquakeCoding = "btTwoFiveFourNineShallow";
-        // }
-
-        // // If an earthquake is deep depth and low magnitude
-        // else if ((earthquake.properties.mag <= 2.5) && (earthquake.geometry.coordinates[2] > 10)) {
-        // earthquakeCoding = "ltTwoFiveDeep";
-        // }
-        // // If an earthquake is medium depth and low magnitude
-        // else if ((earthquake.properties.mag <= 2.5) && (earthquake.geometry.coordinates[2] >5 && earthquake.geometry.coordinates[2] <= 10)) {
-        // earthquakeCoding = "ltTwoFiveMedium";
-        // }
-        // // If an earthquake is shallow depth and low magnitude
-        // else {
-        // earthquakeCoding = "ltTwoFiveShallow";
-        // }
+        // If an earthquake is deep depth and low magnitude
+        else if ((earthquake.properties.mag <= 2.5) && (earthquake.geometry.coordinates[2] > 10)) {
+        earthquakeCoding = "ltTwoFiveDeep";
+        }
+        // If an earthquake is medium depth and low magnitude
+        else if ((earthquake.properties.mag <= 2.5) && (earthquake.geometry.coordinates[2] >5 && earthquake.geometry.coordinates[2] <= 10)) {
+        earthquakeCoding = "ltTwoFiveMedium";
+        }
+        // If an earthquake is shallow depth and low magnitude
+        else {
+        earthquakeCoding = "ltTwoFiveShallow";
+        }
 
       // Update the earthquake count
       earthquakeCount[earthquakeCoding]++;
       // Create a new marker with the appropriate icon and coordinates
       var newMarker = L.marker([earthquake.geometry.coordinates[0], earthquake.geometry.coordinates[1]], {
-        icon: circles[earthquakeCoding]
+        icon: icons[earthquakeCoding]
       });
 
       // Add the new marker to the appropriate layer
